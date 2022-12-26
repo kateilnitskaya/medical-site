@@ -1,0 +1,1120 @@
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-Regular.eot");
+    src: local('TT Hoves Regular'), local('TTHoves-Regular'),
+        url("fonts/TTHoves-Regular.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-Regular.woff2") format('woff2'),
+        url("fonts/TTHoves-Regular.woff") format('woff'),
+        url("fonts/TTHoves-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-Medium.eot");
+    src: local('TT Hoves Medium'), local('TTHoves-Medium'),
+        url("fonts/TTHoves-Medium.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-Medium.woff2") format('woff2'),
+        url("fonts/TTHoves-Medium.woff") format('woff'),
+        url("fonts/TTHoves-Medium.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-Bold.eot");
+    src: local('TT Hoves Bold'), local('TTHoves-Bold'),
+        url("fonts/TTHoves-Bold.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-Bold.woff2") format('woff2'),
+        url("fonts/TTHoves-Bold.woff") format('woff'),
+        url("fonts/TTHoves-Bold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-DemiBold.eot");
+    src: local('TT Hoves DemiBold'), local('TTHoves-DemiBold'),
+        url("fonts/TTHoves-DemiBold.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-DemiBold.woff2") format('woff2'),
+        url("fonts/TTHoves-DemiBold.woff") format('woff'),
+        url("fonts/TTHoves-DemiBold.ttf") format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-ExtraBold.eot");
+    src: local('TT Hoves ExtraBold'), local('TTHoves-ExtraBold'),
+        url("fonts/TTHoves-ExtraBold.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-ExtraBold.woff2") format('woff2'),
+        url("fonts/TTHoves-ExtraBold.woff") format('woff'),
+        url("fonts/TTHoves-ExtraBold.ttf") format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+/* блок хэдер */
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.header-container1 {
+    display: grid;
+    grid-column: 1/2;
+    background-color: #E95258;
+}
+
+.header__logo-container {
+    display: grid;
+    padding-left: 20%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.header__logo {
+    width: 11rem;
+}
+
+.header-container2 {
+    display: grid;
+    grid-column: 2/3;
+    background-color: #E95258;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    align-content: space-between;
+    gap: 5px;
+    padding-right: 20%;
+    padding-top: 6%;
+    padding-bottom: 4%;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+}
+
+.menu__items {
+    font-family: 'TT Hoves';
+    font-size: 70%;
+    color: #F9F9F9;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    justify-self: end;
+}
+
+.menu__element {
+    width: 5px;
+    height: 5px;
+    padding-left: 0.2em;
+    align-content: center;
+}
+
+/* для декстопов */
+@media screen and (min-width: 1024px) {
+    .menu__adaptive {
+        display: none;
+    }
+}
+
+/* для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .header__logo-container {
+        display: grid;
+        padding-left: 20%;
+        padding-top: 5%;
+    }
+
+    .header__logo {
+        width: 10rem;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        justify-items: center;
+        align-content: space-between;
+
+        gap: 5px;
+        padding-right: 20%;
+        padding-top: 6%;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    .menu__adaptive {
+        display: none;
+    }
+}
+
+
+/* для смартфонов */
+@media screen and (max-width: 767px) {
+
+    .header__logo-container {
+        display: grid;
+        padding-left: 20%;
+        padding-top: 4%;
+        align-self: center;
+        justify-self: start;
+    }
+
+    .header__logo {
+        width: 6.5rem;
+    }
+
+    .menu {
+        display: grid;
+        padding-right: 20%;
+        padding-top: 6%;
+        align-self: center;
+        justify-self: end;
+    }
+
+    .menu__items {
+        display: none;
+        border-radius: 25px;
+    }
+
+    .dropbtn {
+        font-family: 'TT Hoves';
+        font-size: 60%;
+        background-color: #F9F9F9;
+        color: rgba(50, 73, 94, 1);
+        font-style: normal;
+        font-weight: 500;
+        padding: 10px;
+        border: none;
+        border-radius: 25px;
+    }
+
+    .menu__adaptive {
+        position: relative;
+        display: inline-block;
+    }
+
+    .menu__element {
+        width: 5px;
+        height: 5px;
+        padding-left: 0.4em;
+        align-content: center;
+    }
+
+    /* Выпадающее содержимое (скрыто по умолчанию) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #F9F9F9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(253, 237, 237, 0.2);
+        z-index: 1;
+    }
+
+    /* Ссылки внутри выпадающего списка */
+    .dropdown-content a {
+        font-family: 'TT Hoves';
+        font-size: 60%;
+        background-color: #F9F9F9;
+        color: rgba(50, 73, 94, 1);
+        font-style: normal;
+        font-weight: 500;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Изменение цвета выпадающих ссылок при наведении курсора */
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    /* Показать выпадающее меню при наведении курсора */
+    .menu__adaptive:hover .dropdown-content {
+        display: block;
+    }
+
+}
+
+/* для small phone */
+@media screen and (max-width: 319px) {
+
+    .header__logo-container {
+        display: grid;
+        padding-left: 20%;
+        padding-top: 4%;
+        align-self: center;
+        justify-self: start;
+    }
+
+    .header__logo {
+        width: 4.5rem;
+    }
+
+    .menu {
+        display: grid;
+        padding-right: 20%;
+        padding-top: 6%;
+        align-self: center;
+        justify-self: end;
+    }
+
+    .menu__items {
+        display: none;
+    }
+
+    .menu__adaptive {
+        font-family: 'TT Hoves';
+        font-size: 50%;
+        color: rgba(50, 73, 94, 1);
+        font-style: normal;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .menu__element {
+        width: 4px;
+        height: 4px;
+        padding-left: 0.3em;
+        align-content: center;
+    }
+}
+
+/* конец блока хэдер */
+
+/* слоган */
+.main {
+    background-color: #E95258;
+}
+
+.main-container1 {
+    /* background-color: #E95258; */
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+
+.main__heading1 {
+    grid-column: 1/2;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: #F9F9F9;
+    font-size: 3rem;
+    /* font-size: 50px; */
+    font-weight: 800;
+    padding-left: 15%;
+    padding-top: 3%;
+    margin-top: 2rem;
+}
+
+.main__text1 {
+    text-align: left;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: #F9F9F9;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 15%;
+    padding-right: 25%;
+    /* width: 35vw; */
+    padding-top: 2rem;
+}
+
+.main__spisok1 {
+    text-align: left;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    list-style-type: circle;
+    color: #F9F9F9;
+    font-weight: normal;
+    font-size: 1rem;
+    padding-top: 0.1rem;
+    padding-left: 18%;
+}
+
+.main-container1 .button {
+    background: #E95258;
+    color: #F9F9F9;
+    border: 1px solid #F9F9F9;
+    margin-left: 15%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.main__phonecall {
+    text-decoration: none;
+}
+
+.button {
+    display: grid;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid #32495E;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    font-family: 'TT Hoves';
+    color: #32495E;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+
+    background-color: #F9F9F9;
+    justify-self: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.main__fon1 {
+    grid-column: 2/3;
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.main__img1 {
+    transform: scale(-1, 1);
+    width: 80%;
+    height: auto;
+}
+
+@media screen and (max-width: 767px) {
+    .main__heading1 {
+        /* font-size: 1.5rem; */
+        font-size: 5vw;
+        padding-left: 5%;
+    }
+
+    .main__content1 {
+        grid-column: 1/3;
+    }
+
+    .main__text1 {
+        font-size: 2.3vw;
+        padding-left: 5%;
+        padding-top: 1rem;
+    }
+
+    .main__spisok1 {
+        font-size: 2.3vw;
+        padding-left: 10%;
+    }
+
+    .main__fon1 {
+        display: none;
+    }
+
+    .main-container1 .button {
+        margin-left: 5%;
+    }
+}
+
+/* конец слогана */
+
+/* блок с раскрывающимся списком контактов */
+
+.button__wrap {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.menu__contacts__wrap {
+    display: inline-block;
+    position: fixed;
+    right: 4vw;
+    bottom: 1vw;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.contacts__wrap {
+    display: none;
+    background-color: rgba(0, 0, 0, 0);
+    min-width: 18rem;
+}
+
+/* элементы внутри выпадающего списка */
+.contacts__wrap a {
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Показать выпадающие контакты при наведении курсора */
+.menu__contacts__wrap:hover .contacts__wrap {
+    display: inline-block;
+}
+
+.menu__contacts__wrap:hover .buttonimg__wrap {
+    background-color: #e952578c;
+    border-radius: 50px;
+}
+
+.img1__wrap:hover {
+    background-color: #c33a7c8c;
+    border-radius: 50px;
+}
+
+.img2__wrap:hover {
+    background-color: #32495e8c;
+    border-radius: 50px;
+}
+
+.img3__wrap:hover {
+    background-color: #4599ff8c;
+    border-radius: 50px;
+}
+
+.img4__wrap:hover {
+    background-color: #14ac518c;
+    border-radius: 50px;
+}
+
+@media screen and (max-width: 767px) {
+    .menu__contacts__wrap {
+        right: 1vw;
+        bottom: 0.5vw;
+        zoom: 0.8;
+    }
+}
+
+/* конец блока с раскрывающимся списком контактов */
+
+/* блок информации */
+
+.information-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.information__picture {
+    grid-column: 1/2;
+    background-color: rgba(50, 73, 94, 1);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template: 1fr;
+    align-items: center;
+}
+
+.information__img {
+    grid-column: 1/2;
+    width: 100%;
+    height: auto;
+}
+
+.information__content {
+    grid-column: 2/3;
+    background-color: #F9F9F9;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: grid;
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    align-items: center;
+}
+
+.information__block {
+    margin-left: 3vw;
+    margin-right: 8vw;
+}
+
+.information__text {
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: rgba(50, 73, 94, 1);
+    /* font-size: 1rem; */
+    font-size: 1.1vw;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 767px) {
+    .information-container {
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 100%;
+    }
+
+    .information__picture {
+        grid-row: 2/3;
+        grid-column: 1/2;
+    }
+
+    .information__content {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+
+    .information__text {
+        font-size: 1rem;
+    }
+}
+
+/* конец блока информации */
+
+/* блоr вопрос-ответ*/
+
+.quest {
+    display: grid;
+    grid-template-columns: 30% 10% 60%;
+    grid-template-rows: 25% repeat(8, 1fr);
+    grid-template-areas:
+        "h1 h1 h1"
+        "q1 st1 qh2"
+        "q2 st2 qp"
+        "q3 st3 qp"
+        "q4 st4 qp"
+        "q5 st5 qp"
+        "q6 st6 qp"
+        "q7 st7 qp"
+        "q8 st8 qp";
+    margin: auto;
+}
+
+.block-questions {
+    background-color: #32495E;
+    width: 100%;
+
+}
+
+.quest {
+    width: 100%;
+}
+
+.quest__h1 {
+    grid-area: h1;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    align-self: center;
+    padding-left: 10%;
+    background: #49647D;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.q {
+    padding-left: 35%;
+}
+
+.q1 {
+    grid-area: q1
+}
+
+.q2 {
+    grid-area: q2
+}
+
+.q3 {
+    grid-area: q3
+}
+
+.q4 {
+    grid-area: q4
+}
+
+.q5 {
+    grid-area: q5
+}
+
+.q6 {
+    grid-area: q6
+}
+
+.q7 {
+    grid-area: q7
+}
+
+.q8 {
+    grid-area: q8;
+    padding-bottom: 5%;
+}
+
+.strel1 {
+    grid-area: st1
+}
+
+.strel2 {
+    grid-area: st2
+}
+
+.strel3 {
+    grid-area: st3
+}
+
+.strel4 {
+    grid-area: st4
+}
+
+.strel5 {
+    grid-area: st5
+}
+
+.strel6 {
+    grid-area: st6
+}
+
+.strel7 {
+    grid-area: st7
+}
+
+.strel8 {
+    grid-area: st8
+}
+
+.quest__h2 {
+    grid-area: qh2;
+}
+
+.quest__p {
+    grid-area: qp;
+    font-family: 'TT Hoves';
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    padding-right: 9rem;
+    padding-bottom: 6rem;
+
+}
+
+.q,
+.quest__h2 {
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 800;
+    color: white;
+}
+
+
+
+/* для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .quest {
+        grid-template-columns: 30% 10% 60%;
+        grid-template-rows: 15% repeat(8, 1fr);
+    }
+
+    .quest__h1 {
+        grid-area: h1;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: white;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        align-self: center;
+        padding-left: 10%;
+        background: #49647D;
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+
+}
+
+/* для смартфонов */
+@media screen and (max-width: 767px) {
+
+    .quest {
+        display: grid;
+        grid-template-columns: 30% 10% 80%;
+        grid-template-rows: 10% repeat(8, 1fr);
+        margin: auto;
+        width: 100%;
+    }
+
+    .quest__h1 {
+        grid-area: h1;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: white;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        align-self: center;
+        padding-left: 10%;
+        background: #49647D;
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 73%;
+    }
+
+    .q {
+        padding-left: 25%;
+    }
+
+    .quest__p {
+        grid-area: qp;
+        font-family: 'TT Hoves';
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 400;
+        color: white;
+        padding-right: 9rem;
+        padding-bottom: 6rem;
+
+    }
+
+}
+
+/* конец блока вопрос ответ*/
+
+/* ----------------------------- нас рекомендуют контакты и футер все вместе */
+.block-contacts {
+    background-color: #f7f4f4;
+}
+
+@media screen and (min-width: 768px) {
+
+    /* блок футера */
+    .footer {
+        background-color: #333333;
+        font-family: 'TT Hoves';
+        height: 302px;
+        width: 100%;
+        color: #F9F9F9;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "lf ms cont ut";
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        padding: 2rem;
+    }
+
+    .logo-footer {
+        display: grid;
+        grid-area: lf;
+    }
+
+    .logo-footer__law {
+        align-self: end;
+        color: #F9F9F9;
+        font-family: 'TT Hoves';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+
+    }
+
+    .logo-footer__img {
+        width: 90%;
+        height: auto;
+    }
+
+    .map-site {
+        grid-area: ms;
+    }
+
+    .map-site__h1,
+    .contacts__h1 {
+        font-family: 'TT Hoves';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+
+    }
+
+    .map-site__navbar,
+    .contacts_call {
+        margin-top: 20px;
+    }
+
+    .map-site__navbar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar__footer,
+    .contacts_call,
+    .contacts_call2,
+    .contacts_email {
+        text-decoration: none;
+        color: #F9F9F9;
+        margin-bottom: 10px;
+        font-family: TT Hoves;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .contacts {
+        grid-area: cont;
+    }
+
+    .contacts_social {
+        display: flex;
+        margin: 0 -5px;
+    }
+
+    .social {
+        margin: 0 5px;
+    }
+
+
+    .up {
+        grid-area: ut;
+        justify-self: end;
+    }
+
+    .up_strelka {
+        margin-bottom: 1rem;
+    }
+
+    .up_text {
+        transform: rotate(-90deg);
+
+    }
+
+
+    /* блок контакты */
+    .contacts-map {
+        display: grid;
+        grid-template-columns: 35% 27% 30% 1fr;
+        grid-template-rows: 0.3fr 1.5fr 0.7fr;
+        margin: auto;
+        grid-gap: 2rem;
+        width: 80%;
+        padding: 2rem;
+
+    }
+
+    .contacts-map__h2 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: #32495E;
+    }
+
+    .contacts-map__image {
+        grid-row: 2/3;
+        grid-column: 1/5;
+        max-width: 100%;
+
+    }
+
+    .map {
+        background: linear-gradient(0deg, rgba(23, 107, 217, 0.2), rgba(23, 107, 217, 0.2));
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 100%;
+    }
+
+    .contacts-map__h1 {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        line-height: 20px;
+        color: #32495E;
+    }
+
+    .contacts-map__adress {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .contacts-map__phone {
+        grid-row: 3/4;
+        grid-column: 2/3;
+    }
+
+    .contacts-map__add {
+        grid-row: 3/4;
+        grid-column: 3/4;
+    }
+
+    .contacts-map__descrip {
+        font-family: 'TT Hoves';
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        color: #32495E;
+        margin-top: 1rem;
+    }
+
+    /* блок нас рекоммендуют */
+    .recommend__h2 {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: #32495E;
+        grid-area: rh;
+    }
+
+    .recommend-image1 {
+        grid-area: ri1;
+        max-width: 100%;
+    }
+
+    .recommend-image2 {
+        grid-area: ri2;
+        max-width: 100%;
+    }
+
+    .recommend-image3 {
+        grid-area: ri3;
+        max-width: 100%;
+    }
+
+    .recommend-image4 {
+        grid-area: ri4;
+        max-width: 100%;
+    }
+
+    .recommend-image5 {
+        grid-area: ri5;
+        max-width: 100%;
+    }
+
+    .recommend {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "rh rh rh rh rh"
+            "ri1 ri2 ri3 ri4 ri5";
+        margin: auto;
+        grid-gap: 1rem;
+        width: 80%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    /* блок футер убираю */
+    .footer {
+        display: none;
+    }
+
+    /* блок контакты */
+    .contacts-map {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr 0.5fr 0.5fr;
+        max-width: 80%;
+        margin: auto;
+        padding-bottom: 7%;
+    }
+
+    .contacts-map__h2 {
+        grid-row: 1/2;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #32495E;
+    }
+
+    .contacts-map__image {
+        grid-row: 2/3;
+        max-width: 100%;
+    }
+
+    .map {
+        background: linear-gradient(0deg, rgba(23, 107, 217, 0.2), rgba(23, 107, 217, 0.2));
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 90%;
+    }
+
+    .contacts-map__h1 {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        line-height: 20px;
+        color: #32495E;
+    }
+
+    .contacts-map__adress {
+        grid-row: 3/4;
+    }
+
+    .contacts-map__phone {
+        grid-row: 4/5;
+    }
+
+    .contacts-map__add {
+        grid-row: 5/6;
+    }
+
+    .contacts-map__descrip {
+        font-family: 'TT Hoves';
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        color: #32495E;
+    }
+
+    /* блок нас рекоммендуют */
+    .recommend__h2 {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #32495E;
+        grid-area: rh;
+    }
+
+    .recommend-image1 {
+        grid-area: ri1;
+        max-width: 100%;
+    }
+
+    .recommend-image2 {
+        grid-area: ri2;
+        max-width: 100%;
+    }
+
+    .recommend-image3 {
+        grid-area: ri3;
+        max-width: 100%;
+    }
+
+    .recommend-image4 {
+        grid-area: ri4;
+        max-width: 100%;
+    }
+
+    .recommend-image5 {
+        grid-area: ri5;
+        max-width: 100%;
+    }
+
+    .recommend {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+            "rh rh rh rh rh"
+            "ri1 ri2 ri3 ri4 ri5";
+        margin: auto;
+        grid-gap: 1rem;
+        width: 80%;
+        padding: 1rem;
+    }
+}
+
+/* -----------------------------конец футера и тд */

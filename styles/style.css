@@ -1,0 +1,2618 @@
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-Regular.eot");
+    src: local('TT Hoves Regular'), local('TTHoves-Regular'),
+        url("fonts/TTHoves-Regular.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-Regular.woff2") format('woff2'),
+        url("fonts/TTHoves-Regular.woff") format('woff'),
+        url("fonts/TTHoves-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-Medium.eot");
+    src: local('TT Hoves Medium'), local('TTHoves-Medium'),
+        url("fonts/TTHoves-Medium.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-Medium.woff2") format('woff2'),
+        url("fonts/TTHoves-Medium.woff") format('woff'),
+        url("fonts/TTHoves-Medium.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-Bold.eot");
+    src: local('TT Hoves Bold'), local('TTHoves-Bold'),
+        url("fonts/TTHoves-Bold.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-Bold.woff2") format('woff2'),
+        url("fonts/TTHoves-Bold.woff") format('woff'),
+        url("fonts/TTHoves-Bold.ttf") format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-DemiBold.eot");
+    src: local('TT Hoves DemiBold'), local('TTHoves-DemiBold'),
+        url("fonts/TTHoves-DemiBold.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-DemiBold.woff2") format('woff2'),
+        url("fonts/TTHoves-DemiBold.woff") format('woff'),
+        url("fonts/TTHoves-DemiBold.ttf") format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'TT Hoves';
+    src: url("fonts/TTHoves-ExtraBold.eot");
+    src: local('TT Hoves ExtraBold'), local('TTHoves-ExtraBold'),
+        url("fonts/TTHoves-ExtraBold.eot?#iefix") format('embedded-opentype'),
+        url("fonts/TTHoves-ExtraBold.woff2") format('woff2'),
+        url("fonts/TTHoves-ExtraBold.woff") format('woff'),
+        url("fonts/TTHoves-ExtraBold.ttf") format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+/*общая кнопка*/
+.button {
+    display: grid;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid #32495E;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    font-family: 'TT Hoves';
+    color: #32495E;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+
+    background-color: #F9F9F9;
+    justify-self: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+
+/* блок хэдер */
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.header-container1 {
+    display: grid;
+    grid-column: 1/2;
+    background-color: #E95258;
+    padding-bottom: 5%;
+}
+
+.header__logo-container {
+    display: grid;
+    padding-left: 20%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.header__logo {
+    width: 11rem;
+}
+
+.header-container2 {
+    display: grid;
+    grid-column: 2/3;
+    background-color: #F9F9F9;
+    padding-bottom: 5%;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    align-content: space-between;
+    gap: 5px;
+    padding-right: 20%;
+    padding-top: 6%;
+    padding-bottom: 4%;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+}
+
+.menu__items {
+    font-family: 'TT Hoves';
+    font-size: 70%;
+    color: rgba(50, 73, 94, 1);
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    justify-self: end;
+    border: none;
+    background-color: #F9F9F9;
+}
+
+.menu__element {
+    width: 5px;
+    height: 5px;
+    padding-left: 0.2em;
+    align-content: center;
+}
+
+/*.menu__items_drop {
+    position: relative;
+    display: inline-block;
+}*/
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #F9F9F9;
+    width: 140px;
+    min-width: 140px;
+    box-shadow: 0px 8px 16px 0px rgba(253, 237, 237, 0.2);
+    z-index: 1;
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+    font-family: 'TT Hoves';
+    font-size: 100%;
+    background-color: #F9F9F9;
+    color: rgba(50, 73, 94, 1);
+    font-style: normal;
+    font-weight: 500;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    justify-self: start;
+}
+
+/* Изменение цвета выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Показать выпадающее меню при наведении курсора */
+.menu__items:hover .dropdown-content {
+    display: block;
+}
+
+
+
+/* для декстопов */
+@media screen and (min-width: 1024px) {
+    .menu__adaptive {
+        display: none;
+    }
+}
+
+/* для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .header__logo-container {
+        display: grid;
+        padding-left: 20%;
+        padding-top: 5%;
+    }
+
+    .header__logo {
+        width: 10rem;
+    }
+
+    .menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+
+        justify-items: center;
+        align-content: space-between;
+
+        gap: 5px;
+        padding-right: 20%;
+        padding-top: 6%;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+
+    /* Выпадающее содержимое (скрыто по умолчанию) */
+    .dropdown-content {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .menu__adaptive {
+        display: none;
+    }
+}
+
+
+/* для смартфонов */
+@media screen and (max-width: 767px) {
+
+    .header__logo-container {
+        display: grid;
+        padding-left: 20%;
+        padding-top: 4%;
+        align-self: center;
+        justify-self: start;
+    }
+
+    .header__logo {
+        width: 6.5rem;
+    }
+
+    .menu {
+        display: grid;
+        padding-right: 20%;
+        padding-top: 6%;
+        align-self: center;
+        justify-self: end;
+    }
+
+    .menu__items {
+        display: none;
+    }
+
+    .dropbtn {
+        font-family: 'TT Hoves';
+        font-size: 60%;
+        background-color: #F9F9F9;
+        color: rgba(50, 73, 94, 1);
+        font-style: normal;
+        font-weight: 500;
+        padding: 10px;
+        border: none;
+    }
+
+    .menu__adaptive {
+        position: relative;
+        display: inline-block;
+    }
+
+    .menu__element {
+        width: 5px;
+        height: 5px;
+        padding-left: 0.4em;
+        align-content: center;
+    }
+
+    /* Выпадающее содержимое (скрыто по умолчанию) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #F9F9F9;
+        width: 88px;
+        min-width: 88px;
+        box-shadow: 0px 8px 16px 0px rgba(253, 237, 237, 0.2);
+        z-index: 1;
+    }
+
+    /* Ссылки внутри выпадающего списка */
+    .dropdown-content a {
+        font-family: 'TT Hoves';
+        font-size: 60%;
+        background-color: #F9F9F9;
+        color: rgba(50, 73, 94, 1);
+        font-style: normal;
+        font-weight: 500;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Изменение цвета выпадающих ссылок при наведении курсора */
+    .dropdown-content a:hover {
+        background-color: #ddd;
+    }
+
+    /* Показать выпадающее меню при наведении курсора */
+    .menu__adaptive:hover .dropdown-content {
+        display: block;
+    }
+
+}
+
+/* для small phone */
+@media screen and (max-width: 319px) {
+
+    .header__logo-container {
+        display: grid;
+        padding-left: 20%;
+        padding-top: 4%;
+        align-self: center;
+        justify-self: start;
+    }
+
+    .header__logo {
+        width: 4.5rem;
+    }
+
+    .menu {
+        display: grid;
+        padding-right: 20%;
+        padding-top: 6%;
+        align-self: center;
+        justify-self: end;
+    }
+
+    .menu__items {
+        display: none;
+    }
+
+    .menu__adaptive {
+        font-family: 'TT Hoves';
+        font-size: 50%;
+        color: rgba(50, 73, 94, 1);
+        font-style: normal;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    .menu__element {
+        width: 4px;
+        height: 4px;
+        padding-left: 0.3em;
+        align-content: center;
+    }
+}
+
+/* конец блока хэдер */
+
+/* блок слоган */
+
+.main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* grid-template-rows: 1fr; */
+}
+
+.main-container1 {
+    grid-column: 1/2;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 6rem 1fr;
+    background-color: #E95258;
+}
+
+.main__heading1 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    align-self: end;
+    text-align: right;
+    text-transform: uppercase;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: #F9F9F9;
+    font-size: 1.75rem;
+    font-weight: 800;
+    padding-right: 10%;
+    padding-left: 18%;
+}
+
+.main__fon1 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.main__img1 {
+    width: 100%;
+    height: auto;
+}
+
+.main__content1 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.main__text1 {
+    text-align: right;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: #F9F9F9;
+    font-size: 1rem;
+    font-weight: 600;
+    padding-right: 20%;
+    padding-left: 10%;
+    padding-top: 10%;
+}
+
+.main__spisok1 {
+    text-align: right;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    list-style-type: circle;
+    list-style: none;
+    color: #F9F9F9;
+    font-weight: normal;
+    font-size: 1rem;
+    padding-top: 3%;
+    padding-right: 20%;
+}
+
+.main__usluga {
+    margin-bottom: 1rem;
+}
+
+/* маркер справа для списка */
+.main__element {
+    margin-bottom: 1px;
+    margin-left: 10px;
+}
+
+.main-container1 .button {
+    background: #E95258;
+    color: #F9F9F9;
+    border: 1px solid #F9F9F9;
+    margin-left: auto;
+    margin-right: 20%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.button__usluga1 {
+    text-decoration: none;
+}
+
+.main-container2 {
+    grid-column: 2/3;
+    background-color: #F9F9F9;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 6rem 1fr;
+}
+
+.main__heading2 {
+    grid-column: 1/3;
+    grid-row: 1/2;
+    align-self: end;
+    text-align: left;
+    text-transform: uppercase;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: rgba(50, 73, 94, 1);
+    font-size: 1.75rem;
+    font-weight: 800;
+    padding-left: 10%;
+    padding-right: 18%;
+}
+
+.main__fon2 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.main__img2 {
+    width: 100%;
+    height: auto;
+}
+
+.main__content2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.main__text2 {
+    text-align: left;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: rgba(50, 73, 94, 1);
+    font-size: 1rem;
+    font-weight: 600;
+    padding-left: 20%;
+    padding-right: 10%;
+    padding-top: 10%;
+}
+
+.main__spisok2 {
+    text-align: left;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    list-style-type: circle;
+    color: rgba(50, 73, 94, 1);
+    font-weight: normal;
+    font-size: 1rem;
+    padding-top: 3%;
+    padding-left: 23.5%;
+}
+
+.main-container2 .button {
+    background: #F9F9F9;
+    color: rgba(50, 73, 94, 1);
+    border: 1px solid rgba(50, 73, 94, 1);
+    margin-left: 20%;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+/* для смартфонов */
+/* @media screen and (max-width: 767px) {
+} */
+@media screen and (max-width: 890px) {
+
+    .main__heading1,
+    .main__heading2 {
+        /* font-size: 1.5rem; */
+        font-size: 3vw;
+    }
+
+    .main__content1,
+    .main__content2 {
+        grid-column: 1/3;
+        grid-row: 2/3;
+    }
+
+    .main__text1,
+    .main__text2 {
+        font-size: 2.3vw;
+    }
+
+    .main__spisok1,
+    .main__spisok2 {
+        font-size: 2.3vw;
+    }
+
+    .main__fon1,
+    .main__fon2 {
+        display: none;
+    }
+}
+
+/* конец блок слоган */
+
+/* блок с раскрывающимся списком контактов */
+
+.button__wrap {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.menu__contacts__wrap {
+    display: inline-block;
+    position: fixed;
+    right: 4vw;
+    bottom: 1vw;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.contacts__wrap {
+    display: none;
+    background-color: rgba(0, 0, 0, 0);
+    min-width: 18rem;
+}
+
+/* элементы внутри выпадающего списка */
+.contacts__wrap a {
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Показать выпадающие контакты при наведении курсора */
+.menu__contacts__wrap:hover .contacts__wrap {
+    display: inline-block;
+}
+
+.menu__contacts__wrap:hover .buttonimg__wrap {
+    background-color: #e952578c;
+    border-radius: 50px;
+}
+
+.img1__wrap:hover {
+    background-color: #c33a7c8c;
+    border-radius: 50px;
+}
+
+.img2__wrap:hover {
+    background-color: #32495e8c;
+    border-radius: 50px;
+}
+
+.img3__wrap:hover {
+    background-color: #4599ff8c;
+    border-radius: 50px;
+}
+
+.img4__wrap:hover {
+    background-color: #14ac518c;
+    border-radius: 50px;
+}
+
+@media screen and (max-width: 767px) {
+    .menu__contacts__wrap {
+        right: 1vw;
+        bottom: 0.5vw;
+        zoom: 0.8;
+    }
+}
+
+/* конец блока с раскрывающимся списком контактов */
+
+/* блок 'наши специалисты' */
+
+.block-specialists {
+    background-color: #F9F9F9;
+}
+
+.specialists__heading {
+    text-transform: uppercase;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: #F9F9F9;
+    font-size: 2.5rem;
+    font-weight: 800;
+    padding-left: 10%;
+    background-color: rgba(50, 73, 94, 1);
+    padding-bottom: 1rem;
+    padding-top: 3rem;
+}
+
+.specialists-container {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); */
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    justify-content: center;
+    margin-left: 8%;
+    margin-right: 7%;
+    margin-top: 2rem;
+    /* margin-bottom: 1rem; */
+}
+
+.specialists1,
+.specialists2,
+.specialists3,
+.specialists4,
+.specialists5,
+.specialists6,
+.specialists7,
+.specialists8 {
+    grid-column: 1fr;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 40% 60%;
+    /* border: 1px solid blue; */
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.specialists1:hover,
+.specialists2:hover,
+.specialists3:hover,
+.specialists4:hover,
+.specialists5:hover,
+.specialists6:hover,
+.specialists7:hover,
+.specialists8:hover {
+    background: rgba(50, 73, 94, 0.2);
+}
+
+.specialists__photo {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    margin: 0 0.5rem 0.5rem 0;
+}
+
+.specialists__img {
+    width: 100wv;
+    height: auto;
+}
+
+.specialists__content {
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+
+.specialists__name {
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: rgba(50, 73, 94, 1);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.specialists__text {
+    font-family: 'TT Hoves';
+    font-style: normal;
+    color: rgba(50, 73, 94, 1);
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+/* для смартфонов */
+@media screen and (max-width: 890px) {
+    .specialists-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .specialists5,
+    .specialists6,
+    .specialists7,
+    .specialists8 {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .specialists__heading {
+        font-size: 1.5rem;
+    }
+}
+
+/* конец блока 'наши специалисты' */
+
+
+/*блок отчеты*/
+.block-reports {
+    display: grid;
+    background-color: #32495E;
+}
+
+.reports-container {
+    display: grid;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    padding-bottom: 4%;
+}
+
+.reports__heading {
+    font-family: 'TT Hoves';
+    color: #F9F9F9;
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 800;
+    margin-bottom: 3%;
+}
+
+.reports__tabs {
+    display: grid;
+    grid-template-columns: 10% 10% 10%;
+    font-family: 'TT Hoves';
+    color: #F9F9F9;
+    font-size: 0.8rem;
+    font-style: normal;
+    padding-bottom: 3%;
+}
+
+.reports__tab1:hover,
+.reports__tab2:hover,
+.reports__tab3:hover {
+    text-decoration-color: #E95258;
+    color: #F9F9F9;
+}
+
+.reports__tab1 {
+    display: grid;
+    grid-column: 1/2;
+    color: #F9F9F9;
+    text-decoration-color: #E95258;
+}
+
+.reports__tab2 {
+    display: grid;
+    grid-column: 2/3;
+    color: #F9F9F9;
+    text-decoration-color: #32495E;
+}
+
+.reports__tab3 {
+    display: grid;
+    grid-column: 3/4;
+    color: #F9F9F9;
+    text-decoration-color: #32495E;
+}
+
+.reports__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.reports_text {
+    display: grid;
+    text-decoration: none;
+    font-family: 'TT Hoves';
+    color: #F9F9F9;
+    font-size: 1rem;
+    font-style: normal;
+    align-self: flex-end;
+    padding: 5%;
+}
+
+.reports__button {
+    display: grid;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid #F9F9F9;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    font-family: 'TT Hoves';
+    color: #F9F9F9;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+    text-align: center;
+
+    background-color: rgba(50, 73, 94, 0.6);
+    justify-self: center;
+    align-self: center;
+
+    cursor: pointer;
+}
+
+.reports__button-text {
+    padding-top: 9%;
+}
+
+.play {
+    padding-top: 30%;
+    padding-left: 7%;
+}
+
+.reports__content1:hover {
+    background-image: url(../img/reports1.png);
+}
+
+.reports__content2:hover {
+    background-image: url(../img/reports2.png);
+}
+
+.reports__content3:hover {
+    background-image: url(../img/reports3.png);
+}
+
+.reports__content4:hover {
+    background-image: url(../img/reports4.png);
+}
+
+.reports__content5:hover {
+    background-image: url(../img/reports5.png);
+}
+
+.reports__content6:hover {
+    background-image: url(../img/reports6.png);
+}
+
+.reports__content7:hover {
+    background-image: url(../img/reports7.png);
+}
+
+.reports__content8:hover {
+    background-image: url(../img/reports8.png);
+}
+
+.reports__content9:hover {
+    background-image: url(../img/reports9.png);
+}
+
+.reports__content10:hover {
+    background-image: url(../img/reports10.png);
+}
+
+.reports__content11:hover {
+    background-image: url(../img/reports11.png);
+}
+
+.reports__content12:hover {
+    background-image: url(../img/reports12.png);
+}
+
+.reports__content1 .reports__button,
+.reports__content2 .reports__button,
+.reports__content3 .reports__button,
+.reports__content4 .reports__button,
+.reports__content5 .reports__button,
+.reports__content6 .reports__button,
+.reports__content7 .reports__button,
+.reports__content8 .reports__button,
+.reports__content9 .reports__button,
+.reports__content10 .reports__button,
+.reports__content11 .reports__button,
+.reports__content12 .reports__button {
+    display: none;
+}
+
+.reports__content1:hover .reports_text,
+.reports__content2:hover .reports_text,
+.reports__content3:hover .reports_text,
+.reports__content4:hover .reports_text,
+.reports__content5:hover .reports_text,
+.reports__content6:hover .reports_text,
+.reports__content7:hover .reports_text,
+.reports__content8:hover .reports_text,
+.reports__content9:hover .reports_text,
+.reports__content10:hover .reports_text,
+.reports__content11:hover .reports_text,
+.reports__content12:hover .reports_text {
+    display: none;
+}
+
+.reports__content2:hover .play,
+.reports__content6:hover .play,
+.reports__content10:hover .play {
+    display: none;
+}
+
+.reports__content1:hover .reports__button,
+.reports__content2:hover .reports__button,
+.reports__content3:hover .reports__button,
+.reports__content4:hover .reports__button,
+.reports__content5:hover .reports__button,
+.reports__content6:hover .reports__button,
+.reports__content7:hover .reports__button,
+.reports__content8:hover .reports__button,
+.reports__content9:hover .reports__button,
+.reports__content10:hover .reports__button,
+.reports__content11:hover .reports__button,
+.reports__content12:hover .reports__button {
+    display: inline;
+}
+
+.reports__content1 {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1/2;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports1.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content2 {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports2.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content3 {
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 1/2;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports3.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content4 {
+    display: grid;
+    grid-column: 4/5;
+    grid-row: 1/2;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports4.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+
+.reports__content5 {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports5.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content6 {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports6.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content7 {
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 2/3;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports7.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content8 {
+    display: grid;
+    grid-column: 4/5;
+    grid-row: 2/3;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports8.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+
+.reports__content9 {
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 3/4;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports9.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content10 {
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 3/4;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports10.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content11 {
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 3/4;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports11.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+.reports__content12 {
+    display: grid;
+    grid-column: 4/5;
+    grid-row: 3/4;
+    background: linear-gradient(rgba(50, 73, 94, 0.6), rgba(50, 73, 94, 0.6)), url(../img/reports12.png);
+    background-size: 100%;
+    width: 18.28rem;
+    height: 11.25rem;
+    object-fit: cover;
+}
+
+
+.reports__button2 {
+    display: grid;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid #F9F9F9;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    font-family: 'TT Hoves';
+    color: #F9F9F9;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+
+    background-color: #32495E;
+    justify-self: center;
+    align-items: center;
+
+    margin-top: 4%;
+    margin-bottom: 4%;
+    cursor: pointer;
+}
+
+
+/* для декстопов */
+@media screen and (max-width: 1200px) {
+
+    .reports-container {
+        width: 85%;
+        height: 85%;
+    }
+
+    .reports__content {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .reports__content1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .reports__content2 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .reports__content3 {
+        grid-column: 3/4;
+        grid-row: 1/2;
+    }
+
+    .reports__content4 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .reports__content5 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .reports__content6 {
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+
+    .reports__content7 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .reports__content8 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .reports__content9 {
+        grid-column: 3/4;
+        grid-row: 3/4;
+    }
+
+    .reports__content10 {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .reports__content11 {
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+
+    .reports__content12 {
+        grid-column: 3/4;
+        grid-row: 4/5;
+    }
+}
+
+/* для планшетов */
+@media screen and (min-width: 768px) and (max-width: 960px) {
+    .reports-container {
+        padding-top: 4%;
+        padding-bottom: 6%;
+    }
+
+    .reports__tabs {
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        margin-bottom: 3%;
+    }
+
+    .reports__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        margin-right: -10%;
+    }
+
+    .reports__content1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .reports__content2 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .reports__content4 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .reports__content5 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .reports__content7 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .reports__content8 {
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+
+    .reports__content10 {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .reports__content11 {
+        grid-column: 2/3;
+        grid-row: 4/5;
+    }
+
+    .reports__content3,
+    .reports__content6,
+    .reports__content9,
+    .reports__content12 {
+        display: none;
+    }
+
+}
+
+/* для смартфонов */
+@media screen and (max-width: 767px) {
+
+    .reports-container {
+        display: grid;
+        width: 90%;
+        height: 90%;
+        padding-top: 4%;
+        padding-bottom: 4%;
+    }
+
+    .reports__heading {
+        font-size: 1.5rem;
+        margin-bottom: 6%;
+    }
+
+    .reports__tabs {
+        display: grid;
+        grid-template-columns: 20% 20% 20%;
+        font-size: 0.8rem;
+        margin-bottom: 5%;
+    }
+
+    .reports__content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    .reports_text {
+        font-size: 0.7rem;
+    }
+
+    .reports__button {
+        width: 7rem;
+        height: 2rem;
+        font-size: 0.6rem;
+    }
+
+    .reports__content1 {
+        display: grid;
+        grid-column: 1/2;
+        grid-row: 1/2;
+        width: 14rem;
+        height: 8rem;
+    }
+
+    .reports__content2 {
+        display: grid;
+        grid-column: 2/3;
+        grid-row: 1/2;
+        width: 14rem;
+        height: 8rem;
+    }
+
+    .reports__content3 {
+        display: grid;
+        grid-column: 1/2;
+        grid-row: 2/3;
+        width: 14rem;
+        height: 8rem;
+    }
+
+    .reports__content4 {
+        display: grid;
+        grid-column: 2/3;
+        grid-row: 2/3;
+        width: 14rem;
+        height: 8rem;
+    }
+
+    .reports__content5 {
+        display: grid;
+        grid-column: 1/2;
+        grid-row: 3/4;
+        width: 14rem;
+        height: 8rem;
+    }
+
+    .reports__content6 {
+        display: grid;
+        grid-column: 2/3;
+        grid-row: 3/4;
+        width: 14rem;
+        height: 8rem;
+    }
+
+    .reports__content7,
+    .reports__content8,
+    .reports__content9,
+    .reports__content10,
+    .reports__content11,
+    .reports__content12 {
+        display: none;
+    }
+
+    .reports__button2 {
+        margin-top: 5%;
+    }
+
+}
+
+/* для small phone */
+@media screen and (max-width: 479px) {
+
+    .reports__heading {
+        font-size: 1.3rem;
+    }
+
+    .reports__content2,
+    .reports__content4,
+    .reports__content6 {
+        display: none;
+    }
+
+    .reports__tabs {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        font-size: 0.8rem;
+    }
+}
+
+/*коец блока отчеты*/
+
+
+/* блок новостей */
+.block-news {
+    display: grid;
+    background-color: #F9F9F9;
+}
+
+.news-container {
+    display: grid;
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+
+.news__heading {
+    font-family: 'TT Hoves';
+    color: rgba(50, 73, 94, 1);
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.news__blocks {
+    display: grid;
+    grid-template-columns: repeat(4 1fr);
+    gap: 15px;
+    object-fit: cover;
+    align-items: center;
+}
+
+.news__block1 {
+    display: grid;
+    grid-column: 1/2;
+    background-image: url(../img/img1.png);
+    background-size: 100%;
+
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 55%;
+}
+
+.text-block1 {
+    display: grid;
+    grid-row: 2/3;
+    background-color: #E95258;
+}
+
+.img {
+    max-width: 100%;
+}
+
+.news__block2 {
+    display: grid;
+    grid-column: 2/3;
+    background-image: url(../img/img2.png);
+    background-size: 100%;
+
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 55%;
+}
+
+.text-block2 {
+    display: grid;
+    grid-row: 2/3;
+    background-color: #E95258;
+}
+
+.news__block3 {
+    display: grid;
+    grid-column: 3/4;
+    background-image: url(../img/img3.png);
+    background-size: 100%;
+
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 55%;
+}
+
+.text-block3 {
+    display: grid;
+    grid-row: 2/3;
+    background-color: #E95258;
+}
+
+.news__block4 {
+    display: grid;
+    grid-column: 4/5;
+    background-image: url(../img/img4.png);
+    background-size: 100%;
+
+    grid-template-columns: 100%;
+    grid-template-rows: 45% 55%;
+}
+
+.text-block4 {
+    display: grid;
+    grid-row: 2/3;
+    background-color: #E95258;
+}
+
+.news__block1,
+.news__block2,
+.news__block3,
+.news__block4 {
+    display: grid;
+    font-family: 'TT Hoves';
+    color: #F9F9F9;
+    font-style: normal;
+    width: 18rem;
+    height: 20rem;
+}
+
+.news_h {
+    font-weight: 800;
+    font-size: 1rem;
+
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.news_text {
+    font-weight: normal;
+    font-size: 0.8rem;
+
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.news_link {
+    color: #F9F9F9;
+    font-weight: 500;
+    font-size: 0.8rem;
+    text-decoration: none;
+
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-bottom: 2.5%;
+}
+
+.news__button {
+    display: grid;
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid #32495E;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    font-family: 'TT Hoves';
+    color: #32495E;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+
+    background-color: #F9F9F9;
+    justify-self: center;
+    align-items: center;
+
+    margin-top: 3%;
+    margin-bottom: 3%;
+    cursor: pointer;
+}
+
+/*для декстопов*/
+@media screen and (max-width: 1200px) {
+    .news-container {
+        width: 85%;
+        height: 85%;
+    }
+
+    .news__blocks {
+        display: grid;
+        grid-template-columns: repeat(3 1fr);
+    }
+
+    .news__block4 {
+        display: none;
+    }
+}
+
+/* для планшетов */
+@media screen and (min-width: 768px) and (max-width: 960px) {
+
+    .news-container {
+        width: 85%;
+        height: 85%;
+    }
+
+    .news__blocks {
+        display: grid;
+        grid-template-columns: repeat(2 1fr);
+        grid-template-rows: repeat(2 1fr);
+    }
+
+    .news__block1 {
+        display: grid;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .news__block2 {
+        display: grid;
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+
+    .news__block3 {
+        display: grid;
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .news__block4 {
+        display: grid;
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+
+    .news__button {
+        margin-top: 4%;
+        margin-bottom: 4%;
+    }
+}
+
+/* для смартфонов */
+@media screen and (max-width: 767px) {
+    .news-container {
+        display: grid;
+        width: 90%;
+        height: 90%;
+    }
+
+    .news__heading {
+        font-size: 1.5rem;
+    }
+
+    .news__blocks {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .news__block1,
+    .news__block2,
+    .news__block3 {
+        grid-column: 1/2;
+    }
+
+    .news__block4 {
+        display: none;
+    }
+
+    .news__button {
+        margin-top: 6%;
+        margin-bottom: 6%;
+    }
+
+}
+
+
+/* конец блока новостей */
+
+
+
+
+
+.block-contacts {
+    background-color: #f7f4f4;
+}
+
+@media screen and (min-width: 768px) {
+
+    /* блок футера */
+    .footer {
+        background-color: #333333;
+        font-family: 'TT Hoves';
+        height: 302px;
+        width: 100%;
+        color: #F9F9F9;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas: "lf ms cont ut";
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        padding: 2rem;
+    }
+
+    .logo-footer {
+        display: grid;
+        grid-area: lf;
+    }
+
+    .logo-footer__law {
+        align-self: end;
+        color: #F9F9F9;
+        font-family: 'TT Hoves';
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+
+    }
+
+    .logo-footer__img {
+        width: 90%;
+        height: auto;
+    }
+
+    .map-site {
+        grid-area: ms;
+    }
+
+    .map-site__h1,
+    .contacts__h1 {
+        font-family: 'TT Hoves';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 800;
+
+    }
+
+    .map-site__navbar,
+    .contacts_call {
+        margin-top: 20px;
+    }
+
+    .map-site__navbar {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar__footer,
+    .contacts_call,
+    .contacts_call2,
+    .contacts_email {
+        text-decoration: none;
+        color: #F9F9F9;
+        margin-bottom: 10px;
+        font-family: TT Hoves;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+    }
+
+    .contacts {
+        grid-area: cont;
+    }
+
+    .contacts_social {
+        display: flex;
+        margin: 0 -5px;
+    }
+
+    .social {
+        margin: 0 5px;
+    }
+
+
+    .up {
+        grid-area: ut;
+        justify-self: end;
+        height: 50%;
+    }
+
+    .up_strelka {
+        margin-bottom: 1.3rem;
+        margin-left: 0.7rem;
+    }
+
+
+    .navbar__footer:hover {
+        background: rgba(161, 156, 156, 0.212);
+    }
+
+    .up:hover {
+        background: rgba(161, 156, 156, 0.212);
+    }
+
+    .up_text {
+        transform: rotate(-90deg);
+        text-decoration: none;
+        color: white;
+    }
+
+    .link-up {
+        text-decoration: none;
+        color: white;
+    }
+
+
+    /* блок контакты */
+    .contacts-map {
+        display: grid;
+        grid-template-columns: 35% 27% 30% 1fr;
+        grid-template-rows: 0.3fr 1.5fr 0.7fr;
+        margin: auto;
+        grid-gap: 2rem;
+        width: 80%;
+        padding: 2rem;
+
+    }
+
+    .contacts-map__h2 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: #32495E;
+    }
+
+    .contacts-map__image {
+        grid-row: 2/3;
+        grid-column: 1/5;
+        max-width: 100%;
+
+    }
+
+    .map {
+        background: linear-gradient(0deg, rgba(23, 107, 217, 0.2), rgba(23, 107, 217, 0.2));
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 100%;
+    }
+
+    .contacts-map__h1 {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        line-height: 20px;
+        color: #32495E;
+    }
+
+    .contacts-map__adress {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+
+    .contacts-map__phone {
+        grid-row: 3/4;
+        grid-column: 2/3;
+    }
+
+    .contacts-map__add {
+        grid-row: 3/4;
+        grid-column: 3/4;
+    }
+
+    .contacts-map__descrip {
+        font-family: 'TT Hoves';
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        color: #32495E;
+        margin-top: 1rem;
+    }
+
+    /* блок нас рекоммендуют */
+    .recommend__h2 {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: #32495E;
+        grid-area: rh;
+    }
+
+    .recommend-image1 {
+        grid-area: ri1;
+        max-width: 100%;
+    }
+
+    .recommend-image2 {
+        grid-area: ri2;
+        max-width: 100%;
+    }
+
+    .recommend-image3 {
+        grid-area: ri3;
+        max-width: 100%;
+    }
+
+    .recommend-image4 {
+        grid-area: ri4;
+        max-width: 100%;
+    }
+
+    .recommend-image5 {
+        grid-area: ri5;
+        max-width: 100%;
+    }
+
+    .recommend {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "rh rh rh rh rh"
+            "ri1 ri2 ri3 ri4 ri5";
+        margin: auto;
+        grid-gap: 1rem;
+        width: 80%;
+        padding: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    /* блок футер убираю */
+    .footer {
+        display: none;
+    }
+
+    /* блок контакты */
+    .contacts-map {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr 0.5fr 0.5fr;
+        max-width: 80%;
+        margin: auto;
+        padding-bottom: 7%;
+    }
+
+    .contacts-map__h2 {
+        grid-row: 1/2;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #32495E;
+    }
+
+    .contacts-map__image {
+        grid-row: 2/3;
+        max-width: 100%;
+    }
+
+    .map {
+        background: linear-gradient(0deg, rgba(23, 107, 217, 0.2), rgba(23, 107, 217, 0.2));
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 90%;
+    }
+
+    .contacts-map__h1 {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        line-height: 20px;
+        color: #32495E;
+    }
+
+    .contacts-map__adress {
+        grid-row: 3/4;
+    }
+
+    .contacts-map__phone {
+        grid-row: 4/5;
+    }
+
+    .contacts-map__add {
+        grid-row: 5/6;
+    }
+
+    .contacts-map__descrip {
+        font-family: 'TT Hoves';
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        color: #32495E;
+    }
+
+    /* блок нас рекоммендуют */
+    .recommend__h2 {
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: #32495E;
+        grid-area: rh;
+    }
+
+    .recommend-image1 {
+        grid-area: ri1;
+        max-width: 100%;
+    }
+
+    .recommend-image2 {
+        grid-area: ri2;
+        max-width: 100%;
+    }
+
+    .recommend-image3 {
+        grid-area: ri3;
+        max-width: 100%;
+    }
+
+    .recommend-image4 {
+        grid-area: ri4;
+        max-width: 100%;
+    }
+
+    .recommend-image5 {
+        grid-area: ri5;
+        max-width: 100%;
+    }
+
+    .recommend {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: "rh rh rh rh rh"
+            "ri1 ri2 ri3 ri4 ri5";
+        margin: auto;
+        grid-gap: 1rem;
+        width: 80%;
+        padding: 1rem;
+    }
+}
+
+
+/* блоr вопрос-ответ*/
+.quest {
+    display: grid;
+    grid-template-columns: 30% 10% 60%;
+    grid-template-rows: 25% repeat(8, 1fr);
+    grid-template-areas: "h1 h1 h1"
+        "q1 st1 qh2"
+        "q2 st2 qp"
+        "q3 st3 qp"
+        "q4 st4 qp"
+        "q5 st5 qp"
+        "q6 st6 qp"
+        "q7 st7 qp"
+        "q8 st8 qp";
+    margin: auto;
+}
+
+.block-questions {
+    background-color: #32495E;
+    width: 100%;
+
+}
+
+.quest {
+    width: 100%;
+}
+
+.quest__h1 {
+    grid-area: h1;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: white;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    align-self: center;
+    padding-left: 10%;
+    background: #49647D;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.q {
+    padding-left: 35%;
+}
+
+.q1 {
+    grid-area: q1
+}
+
+.q2 {
+    grid-area: q2
+}
+
+.q3 {
+    grid-area: q3
+}
+
+.q4 {
+    grid-area: q4
+}
+
+.q5 {
+    grid-area: q5
+}
+
+.q6 {
+    grid-area: q6
+}
+
+.q7 {
+    grid-area: q7
+}
+
+.q8 {
+    grid-area: q8;
+    padding-bottom: 5%;
+}
+
+.strel1 {
+    grid-area: st1
+}
+
+.strel2 {
+    grid-area: st2
+}
+
+.strel3 {
+    grid-area: st3
+}
+
+.strel4 {
+    grid-area: st4
+}
+
+.strel5 {
+    grid-area: st5
+}
+
+.strel6 {
+    grid-area: st6
+}
+
+.strel7 {
+    grid-area: st7
+}
+
+.strel8 {
+    grid-area: st8
+}
+
+.quest__h2 {
+    grid-area: qh2;
+}
+
+.quest__p {
+    grid-area: qp;
+    font-family: 'TT Hoves';
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    color: white;
+    padding-right: 9rem;
+    padding-bottom: 6rem;
+
+}
+
+.q,
+.quest__h2 {
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 800;
+    color: white;
+}
+
+
+
+/* для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .quest {
+        grid-template-columns: 30% 10% 60%;
+        grid-template-rows: 15% repeat(8, 1fr);
+    }
+
+    .quest__h1 {
+        grid-area: h1;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: white;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        align-self: center;
+        padding-left: 10%;
+        background: #49647D;
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+
+}
+
+/* для смартфонов */
+@media screen and (max-width: 767px) {
+
+    .quest {
+        display: grid;
+        grid-template-columns: 30% 10% 80%;
+        grid-template-rows: 10% repeat(8, 1fr);
+        margin: auto;
+        width: 100%;
+    }
+
+    .quest__h1 {
+        grid-area: h1;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: white;
+        margin-top: 5%;
+        margin-bottom: 5%;
+        align-self: center;
+        padding-left: 10%;
+        background: #49647D;
+        border: 1px solid #000000;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        width: 73%;
+    }
+
+    .q {
+        padding-left: 25%;
+    }
+
+    .quest__p {
+        grid-area: qp;
+        font-family: 'TT Hoves';
+        font-size: 0.8rem;
+        font-style: normal;
+        font-weight: 400;
+        color: white;
+        padding-right: 9rem;
+        padding-bottom: 6rem;
+
+    }
+
+}
+
+/* конец блока вопрос ответ*/
+
+/*блок наши услуги*/
+
+.block-services {
+    background-color: #32495E;
+    width: 100%;
+    font-family: 'TT Hoves';
+    color: white;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-rows: 20% 1fr 20%;
+    grid-gap: 5%;
+    justify-content: center;
+    margin-left: 8%;
+    margin-right: 7%;
+}
+
+.services__head {
+    grid-area: 1/1/2/5;
+    font-family: 'TT Hoves';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 2%;
+    align-self: center;
+}
+
+.servhead {
+    font-size: 2.5vh;
+    font-style: normal;
+    font-weight: 800;
+}
+
+.services__cardio {
+    grid-area: 2/1/3/2;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50% 50%;
+    background-image: url(../img/med.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.services__travma {
+    grid-area: 2/2/3/3
+}
+
+.services__food {
+    grid-area: 2/3/3/4
+}
+
+.services__sauna {
+    grid-area: 2/4/3/5
+}
+
+.services__text {
+    grid-area: 2/1/3/1;
+    background-color: #E95258;
+    font-family: 'TT Hoves';
+    padding: 3%;
+}
+
+.services__text-p {
+    font-family: 'TT Hoves';
+    font-size: 2vh;
+    font-style: normal;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.services-button {
+    display: grid;
+    grid-area: 3/2/4/4;
+}
+
+.button_buttonserv {
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid #F9F9F9;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    font-family: 'TT Hoves';
+    color: #F9F9F9;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+
+    background-color: #32495E;
+    justify-self: center;
+    align-items: center;
+
+    cursor: pointer;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.img {
+    max-width: 100%;
+}
+
+.services__text:hover,
+.services__food:hover,
+.services__travma:hover,
+.services__sauna:hover {
+    background: rgba(27, 25, 25, 0.212);
+}
+
+/* для смартфонов */
+@media screen and (max-width: 767px) {
+    .services {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 5% repeat(2, 1fr) 5%;
+        grid-gap: 3%;
+        justify-content: center;
+        margin-left: 8%;
+        margin-right: 8%;
+    }
+
+    .services__head {
+        grid-area: 1/1/2/4;
+        font-family: 'TT Hoves';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 1.5rem;
+        color: white;
+        margin-top: 8%;
+        margin-bottom: 5%;
+        align-self: center;
+    }
+
+    .servhead {
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 800;
+    }
+
+    .services__cardio {
+        grid-area: 2/1/3/2;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        background-image: url(../img/med.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        width: 100%;
+        height: 100%;
+    }
+
+    .services__travma {
+        grid-area: 2/2/3/3
+    }
+
+    .services__food {
+        grid-area: 3/1/4/2
+    }
+
+    .services__sauna {
+        grid-area: 3/2/4/3
+    }
+
+    .services__text {
+        grid-area: 2/1/3/1;
+        background-color: #E95258;
+        font-family: 'TT Hoves';
+        padding: 3%;
+    }
+
+    .services__text-p {
+        font-family: 'TT Hoves';
+        font-size: 2vh;
+        font-style: normal;
+        font-weight: 400;
+        word-wrap: break-word;
+    }
+
+    .services-button {
+        grid-area: 4/1/5/3
+    }
+
+    .services__cardio,
+    .services__travma,
+    .services__food,
+    .services__sauna,
+    .services-button {
+        display: grid;
+        justify-content: center;
+    }
+
+}
+
+/* для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .services__text-p {
+        font-family: 'TT Hoves';
+        font-size: 1.7vh;
+        font-style: normal;
+        font-weight: 400;
+        word-wrap: break-word;
+    }
+
+    .servhead {
+        font-size: 2vh;
+        font-style: normal;
+        font-weight: 800;
+    }
+
+    .services {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-rows: 20% 60% 10%;
+    }
+
+    .services__head {
+        font-size: 2rem;
+    }
+}
+
+/*конец блока наши услуги*/
+
+/*блок прайс-лист*/
+
+.block-price {
+    width: 100%;
+    font-family: 'TT Hoves';
+    color: #32495E;
+}
+
+.price__h1 {
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    align-self: center;
+}
+
+.price {
+    display: grid;
+    grid-template-columns: 30% 10% 30% 10%;
+    grid-template-rows: 15% 65% 10%;
+    grid-template-areas: "priceh priceh priceh priceh"
+        "col1 col2 col3 col4"
+        "pb pb pb pb";
+    width: 80%;
+    margin: auto;
+    grid-gap: 5%;
+    padding-bottom: 2%;
+}
+
+.price__col1 {
+    grid-area: col1;
+}
+
+.price__col2 {
+    grid-area: col2;
+}
+
+.price__col3 {
+    grid-area: col3;
+}
+
+.price__col4 {
+    grid-area: col4;
+}
+
+.price__h1 {
+    grid-area: priceh;
+}
+
+.price__button {
+    grid-area: pb;
+    display: grid;
+    justify-content: center;
+}
+
+.price-h2 {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 17px;
+    margin-bottom: 2rem;
+}
+
+.price__col1-name,
+.price__col3-name {
+    font-weight: 800;
+    color: #8093AC;
+    margin-top: 2rem;
+}
+
+.price__col4-num,
+.price__col2-num {
+    font-weight: 800;
+    color: #32495E;
+    margin-bottom: 2rem;
+}
+
+.price-button {
+    width: 10rem;
+    height: 3rem;
+    border: 1px solid #32495E;
+    box-sizing: border-box;
+    border-radius: 25px;
+
+    font-family: 'TT Hoves';
+    color: #32495E;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 500;
+
+    background-color: #FFFFFF;
+    justify-self: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+/* для планшетов */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .price {
+        display: grid;
+        grid-template-columns: 30% 1fr 30% 1fr;
+        grid-template-rows: 15% 70% 20%;
+        grid-template-areas: "priceh priceh priceh priceh"
+            "col1 col2 col3 col4"
+            "pb pb pb pb";
+        width: 80%;
+        margin: auto;
+        grid-gap: 5%;
+        padding-bottom: 5%;
+    }
+
+    .price__col1-name,
+    .price__col3-name {
+        font-weight: 800;
+        color: #8093AC;
+        margin-top: 1.5rem;
+    }
+
+    .price__col4-num,
+    .price__col2-num {
+        font-weight: 800;
+        color: #32495E;
+        margin-bottom: 30%;
+
+    }
+
+}
+
+/* для смартфонов */
+@media screen and (max-width: 767px) {
+    .price {
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 10% 70% 20%;
+        grid-template-areas: "priceh priceh"
+            "col1 col2"
+            "pb pb";
+        width: 80%;
+        margin: auto;
+    }
+
+    .price__h1 {
+        font-size: 1.5rem;
+    }
+
+    .price__col1-name,
+    .price__col3-name {
+        font-weight: 800;
+        color: #8093AC;
+        margin-top: 1.5rem;
+    }
+
+    .price__col4-num,
+    .price__col2-num {
+        font-weight: 800;
+        color: #32495E;
+        margin-bottom: 30%;
+
+    }
+
+    .price__col3,
+    .price__col4 {
+        display: none;
+    }
+}
+
+/*конец блока прайс-лист*/
